@@ -301,7 +301,7 @@ services:
       - "8085:8080"  # Chuyển đổi cổng từ 8080 sang 8085
     networks:
       - hadoop-net
-    command: webserver
+    entrypoint: /opt/airflow/dags/entrypoint.sh  # Sử dụng tập lệnh entrypoint.sh từ thư mục dags
 
   airflow-scheduler:
     image: apache/airflow:2.5.0
